@@ -5,10 +5,7 @@ import HeadlessTippy from "@tippyjs/react/headless";
 import PopperWrapper from "../../components/popper/Wrapper";
 import AccountItem from "../../components/AccountItem/AccountItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleXmark,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames/bind";
 import styles from "./search.module.scss";
 import { useRef } from "react";
@@ -68,11 +65,11 @@ const Search = () => {
     }
   };
   return (
-    //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context. 
+    //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
     <div>
       <HeadlessTippy
         interactive={true}
-        appendTo={()=>document.body}
+        appendTo={() => document.body}
         visible={searchResult.length > 0 && showResults}
         render={(attrs) => (
           <div className={cx("search-result")} tabIndex="-1" {...attrs}>
@@ -109,7 +106,7 @@ const Search = () => {
               e.preventDefault();
             }}
           >
-            <SearchIcon/>
+            <SearchIcon />
           </button>
         </div>
       </HeadlessTippy>
